@@ -1,1 +1,34 @@
-theme: jekyll-theme-minimal
+url: https://ubc-minecraft-campus.github.io
+
+markdown: kramdown
+
+kramdown:
+  auto_ids: true
+  enable_coderay: false
+  hard_wrap: false
+  input: GFM
+
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jemoji
+  - jekyll-sitemap
+
+# Defaults
+defaults:
+  - scope: # default for everything across the site
+      path: ""
+    values:
+      author: Muchen He
+      show_navigation: true
+      show_footer: true
+  - scope: # stuff under _posts folder
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      excerpt_separator: <!-- excerpt -->
+      nav_active: /blog
+      permalink: /blog/:year/:title/
