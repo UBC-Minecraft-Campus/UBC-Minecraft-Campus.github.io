@@ -1,0 +1,6 @@
+- text: 'Home'
+  url: /
+- text: 'Team'
+  url: /team
+- text: 'Progress'
+  url: /progress
