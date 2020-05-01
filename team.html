@@ -2,3 +2,42 @@
 layout: default
 permalink: /team
 ---
+
+<style>
+img.circle {
+    max-width: 10rem;
+    border-radius: 50%;
+}
+p.member-name {
+    font-weight: lighter;
+}
+p.member-role {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80%;
+    letter-spacing: 150%;
+    margin-top: 0;
+}
+</style>
+
+<div class="container">
+    <div class="row mt-4">
+        {% for member in site.data.team %}
+        <div class="col-md-4 col-6" style="text-align: center;">
+            {% if member.pic %}
+            <img src="{{ member.pic }}" alt="" class="circle">
+            {% else %}
+            <img src="/img/avatar_ph.png" alt="" class="circle">
+            {% endif %}
+            <p class="member-name mt-2 mb-0">
+                @{{ member.displayname }}&nbsp;
+                {% if member.fullname %}
+                <span class="text-muted"><i>({{ member.fullname }})</i></span>
+                {% endif %}
+            </p>
+            <p class="member-role mt-0, mb-5">{{ member.role | join: ', '}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>

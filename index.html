@@ -1,4 +1,29 @@
 ---
 layout: default
+overlay: '/img/koerner.jpg'
+overlay_filter: 0.2
+title: UBC Minecraft Campus
 ---
 
+<header class="jumbotron jumbotron-fluid py-5" style="
+background:url('{{ page.overlay }}') no-repeat center center;
+background-size:cover;
+min-height:300px;
+max-height:600px;
+{% if page.overlay_filter %}
+background-color:rgba(0,0,0,{{ page.overlay_filter }});background-blend-mode:multiply;
+{% endif %}
+">
+<div class="container">
+    <h1 class="text-light" style="font-weight: bold;">{{ page.title }}</h1>
+</div>
+</header>
+
+<section>
+    <div class="container">
+        <p>
+            Welcome to the homepage of UBC Minecraft Campus project. We are a team of UBC students recreating the Vancouver 
+            campus of the University of British Columbia in vanilla Minecraft.
+        </p>
+    </div>
+</section>
