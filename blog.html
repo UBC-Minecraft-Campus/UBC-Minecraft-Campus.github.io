@@ -2,3 +2,13 @@
 layout: default
 permalink: /blog
 ---
+
+<div class="container mt-5">
+    {% for post in site.posts %}
+    <div>
+        <h1 class="display-4">{{ post.title }}</h1>
+        <p>{{ post.content | markdownify }}</p>
+    </div>
+    
+  {% endfor %}
+</div>

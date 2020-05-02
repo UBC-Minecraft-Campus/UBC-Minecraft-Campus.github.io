@@ -1,8 +1,8 @@
 - text: 'Home'
   url: /
-# - text: 'Blog'
-#   url: /blog
-- text: 'Progress'
-  url: /progress
+- text: 'Blog'
+  url: /blog
+# - text: 'Progress'
+#   url: /progress
 - text: 'Team'
   url: /team
