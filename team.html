@@ -22,22 +22,24 @@ p.member-role {
 
 <div class="container">
     <div class="row mt-4">
-        {% for member in site.data.team %}
-        <div class="col-md-4 col-6" style="text-align: center;">
+        {% for member in site.data.team | sort %}
+        <div class="col-md-2 col-3" style="text-align: center;" data-toggle="tooltip" data-placement="bottom" title="Contributions: {{ member.credit | join: ', ' }}">
             {% if member.pic %}
             <img src="{{ member.pic }}" alt="" class="circle">
             {% else %}
             <img src="/img/avatar_ph.png" alt="" class="circle">
             {% endif %}
             <p class="member-name mt-2 mb-0">
-                @{{ member.displayname }}&nbsp;
-                {% if member.fullname %}
-                <span class="text-muted"><i>({{ member.fullname }})</i></span>
-                {% endif %}
+                @{{ member.displayname }}
             </p>
             <p class="member-role mt-0, mb-5">{{ member.role | join: ', '}}</p>
         </div>
         {% endfor %}
     </div>
-
 </div>
+
+<script>
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+</script>
